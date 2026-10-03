@@ -1,66 +1,104 @@
 # 🏋️ Virtual Coach – AI-Powered Fitness Coach Using Computer Vision 🚀
-
+ 
 ### 📌 Project Overview
-**Virtual Coach** – это AI-коуч, который анализирует движения спортсмена на видео и сравнивает их с эталонными.  
-Проект использует **Keypoint R-CNN** для определения ключевых точек тела и оценивает технику выполнения упражнений.  
-
-💡 **Применение:**  
-✅ Фитнес (приседания, отжимания, планка)  
-✅ Танцы и спортивные движения  
-✅ Анализ техники в боевых искусствах  
-✅ Геймификация тренировок 🎮  
-
+ 
+**Virtual Coach** is an AI-powered fitness coach that analyzes an athlete's movements from video recordings and compares them with reference movements.
+ 
+The project uses **Keypoint R-CNN** to detect human body keypoints and evaluate exercise execution quality through pose similarity analysis.
+ 
+💡 **Use Cases:**
+✅ Fitness training (squats, push-ups, planks)
+✅ Dance and sports movement analysis
+✅ Martial arts technique assessment
+✅ Fitness gamification 🎮
+ 
 ---
-
-## 📂 **Структура проекта**
-
-📂 VirtualCoach/
-├── 📂 src/ # Основной код проекта │ ├── keypoint_detector.py # Детекция ключевых точек │ ├── procrustes_analysis.py # Аффинное выравнивание поз │ ├── similarity_metrics.py # Расчёт метрик сходства │ ├── process_video.py # Обработка видео и разбиение на кадры │ ├── visualization.py # Визуализация ключевых точек │ ├── main.py # Главный файл запуска ├── 📂 images/ # Примеры работы (скриншоты, графики) ├── 📂 examples/ # Jupyter Notebook с демонстрацией ├── 📂 scripts/ # Скрипты для запуска модели │ ├── train.py # Скрипт для обучения (если требуется) │ ├── evaluate.py # Скрипт для оценки модели │ ├── run_analysis.py # Запуск анализа видео ├── README.md # Описание проекта ├── requirements.txt # Зависимости Python ├── LICENSE # Лицензия (MIT)
-
-## 🎥 **Как работает Virtual Coach?**
-📌 **1. Загружаем видео спортсмена и эталонное видео**  
-📌 **2. Разбиваем видео на кадры**  
-📌 **3. Определяем ключевые точки тела с помощью Keypoint R-CNN**  
-📌 **4. Применяем аффинное преобразование (наложение Прокруста)**  
-📌 **5. Сравниваем движения по метрикам:**  
-   - **Косинусное сходство (анализ углов поз)**  
-   - **Взвешенное совпадение (учёт точности точек)**
-     
-📌 **6. Визуализируем различия и выдаём оценку выполнения упражнения**  
-
+ 
+## 📂 Project Structure
+ 
+```text
+VirtualCoach/
+├── src/
+│ ├── keypoint_detector.py
+│ ├── procrustes_analysis.py
+│ ├── similarity_metrics.py
+│ ├── process_video.py
+│ ├── visualization.py
+│ └── main.py
+├── images/
+├── examples/
+├── scripts/
+│ ├── train.py
+│ ├── evaluate.py
+│ └── run_analysis.py
+├── README.md
+├── requirements.txt
+└── LICENSE
+```
+ 
 ---
-
-## 📊 **Результаты**
-| Метрика  | Значение  |
+ 
+## 🎥 How Virtual Coach Works
+ 
+📌 **1. Load an athlete's video and a reference video**
+ 
+📌 **2. Extract video frames**
+ 
+📌 **3. Detect body keypoints using Keypoint R-CNN**
+ 
+📌 **4. Apply Procrustes alignment for pose normalization**
+ 
+📌 **5. Compare movements using similarity metrics:**
+- Cosine similarity (pose angle analysis)
+- Weighted matching (keypoint confidence evaluation)
+ 
+📌 **6. Visualize differences and generate exercise quality scores**
+ 
+---
+ 
+## 📊 Results
+ 
+| Metric | Value |
 |----------|----------|
-| Среднее **косинусное сходство** | **0.9828** |
-| Среднее **взвешенное совпадение** | **59.1997** |
-
-📌 **Чем выше значение, тем лучше совпадает техника выполнения!**  
-
+| Average Cosine Similarity | **0.9828** |
+| Average Weighted Match Score | **59.1997** |
+ 
+📌 **Higher values indicate better alignment between the performed exercise and the reference movement.**
+ 
 ---
-
-## 🚀 **Как запустить проект?**
-### **🔧 Установка зависимостей**
+ 
+## 🚀 How to Run the Project
+ 
+### 🔧 Install Dependencies
+ 
 ```bash
 git clone https://github.com/Alex1988Den/VirtualCoach.git
 cd VirtualCoach
 pip install -r requirements.txt
-
-🎥 Запуск анализа видео
-
+```
+ 
+### 🎥 Run Video Analysis
+ 
+```bash
 python src/main.py --reference "path_to_ref_video.mp4" --input "path_to_user_video.mp4"
-
-🛠 Технологии
-
-    Python 🐍
-    PyTorch + torchvision 🔥
-    OpenCV 🎥
-    Matplotlib 📊
-    NumPy + SciPy 🔢
-
-👥 Авторы
-
-💡 Разработано Alex1988Den
-
-🙌 Если вам понравился проект – ставьте ⭐ на GitHub!
+```
+ 
+---
+ 
+## 🛠 Technologies
+ 
+- Python
+- PyTorch
+- Torchvision
+- OpenCV
+- Matplotlib
+- NumPy
+- SciPy
+ 
+---
+ 
+## 👨‍💻 Author
+ 
+Developed by **Aleksandr Denissov**
+ 
+If you find this project useful, feel free to leave a ⭐ on GitHub.
