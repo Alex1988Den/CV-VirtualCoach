@@ -1,6 +1,6 @@
 # 🏋️ Virtual Coach – AI-Powered Fitness Coach Using Computer Vision 🚀
 
-### 📌 Описание проекта
+### 📌 Project Overview
 **Virtual Coach** – это AI-коуч, который анализирует движения спортсмена на видео и сравнивает их с эталонными.  
 Проект использует **Keypoint R-CNN** для определения ключевых точек тела и оценивает технику выполнения упражнений.  
 
